@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+</head>
+<body>
+    <h1>Testing UI</h1>
+    <img id="refreshingImage" src="/detect_faces" alt="Refreshing Image">
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        setInterval(function() {
+            var img = document.getElementById('refreshingImage');
+            img.src = '/detect_faces?t=' + new Date().getTime();
+        }, params.get('interval') || 250);
+    </script>
+</body>
+</html>
