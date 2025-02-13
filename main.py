@@ -54,7 +54,7 @@ def detect_faces():
 
     # Detect QR codes
     retval, decoded_info, points, _ = qr_detector.detectAndDecodeMulti(img)
-
+    # Draw QR code bounding boxes
     if retval:
         for i in range(len(decoded_info)):
             if points is not None:
